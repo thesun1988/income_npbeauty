@@ -10,7 +10,6 @@ class MyTransaction extends StatelessWidget {
     required this.money,
     required this.date,
   });
-
   @override
   Widget build(BuildContext context) {
     return Padding(
