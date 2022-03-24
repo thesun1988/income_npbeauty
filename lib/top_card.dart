@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 class TopNeuCard extends StatelessWidget {
   final String balance;
-  final String income;
-  final String expense;
+  final String thisMonth;
+  final String lastMonth;
 
   TopNeuCard({
     required this.balance,
-    required this.expense,
-    required this.income,
+    required this.thisMonth,
+    required this.lastMonth,
   });
 
   @override
@@ -21,7 +21,7 @@ class TopNeuCard extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text('B A L A N C E',
+              Text('DOANH THU',
                   style: TextStyle(color: Colors.grey[500], fontSize: 16)),
               Text(
                 '\$' + balance,
@@ -34,31 +34,31 @@ class TopNeuCard extends StatelessWidget {
                   children: [
                     Row(
                       children: [
-                        Container(
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.grey[200],
-                          ),
-                          child: Center(
-                            child: Icon(
-                              Icons.arrow_upward,
-                              color: Colors.green,
-                            ),
-                          ),
-                        ),
+                        // Container(
+                        //   padding: EdgeInsets.all(10),
+                        //   decoration: BoxDecoration(
+                        //     shape: BoxShape.circle,
+                        //     color: Colors.grey[200],
+                        //   ),
+                        //   // // child: Center(
+                        //   //   child: Icon(
+                        //   //     Icons.arrow_upward,
+                        //   //     color: Colors.green,
+                        //   //   ),
+                        //   // ),
+                        // ),
                         SizedBox(
                           width: 10,
                         ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Income',
+                            Text('Tháng Này',
                                 style: TextStyle(color: Colors.grey[500])),
                             SizedBox(
                               height: 5,
                             ),
-                            Text('\$' + income,
+                            Text('\$' + thisMonth,
                                 style: TextStyle(
                                     color: Colors.grey[600],
                                     fontWeight: FontWeight.bold)),
@@ -68,31 +68,31 @@ class TopNeuCard extends StatelessWidget {
                     ),
                     Row(
                       children: [
-                        Container(
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.grey[200],
-                          ),
-                          child: Center(
-                            child: Icon(
-                              Icons.arrow_downward,
-                              color: Colors.red,
-                            ),
-                          ),
-                        ),
+                        // Container(
+                        //   padding: EdgeInsets.all(10),
+                        //   decoration: BoxDecoration(
+                        //     shape: BoxShape.circle,
+                        //     color: Colors.grey[200],
+                        //   ),
+                        //   // child: Center(
+                        //   //   child: Icon(
+                        //   //     Icons.arrow_downward,
+                        //   //     color: Colors.red,
+                        //   //   ),
+                        //   // ),
+                        // ),
                         SizedBox(
                           width: 10,
                         ),
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Text('Expense',
+                            Text('Tháng Trước',
                                 style: TextStyle(color: Colors.grey[500])),
                             SizedBox(
                               height: 5,
                             ),
-                            Text('\$' + expense,
+                            Text('\$' + lastMonth,
                                 style: TextStyle(
                                     color: Colors.grey[600],
                                     fontWeight: FontWeight.bold)),
@@ -106,21 +106,21 @@ class TopNeuCard extends StatelessWidget {
             ],
           ),
         ),
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(15),
-            color: Colors.grey[300],
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.grey.shade500,
-                  offset: Offset(4.0, 4.0),
-                  blurRadius: 15.0,
-                  spreadRadius: 1.0),
-              BoxShadow(
-                  color: Colors.white,
-                  offset: Offset(-4.0, -4.0),
-                  blurRadius: 15.0,
-                  spreadRadius: 1.0),
-            ]),
+        // decoration: BoxDecoration(
+        //     borderRadius: BorderRadius.circular(15),
+        //     color: Colors.grey[300],
+        //     boxShadow: [
+        //       BoxShadow(
+        //           color: Colors.grey.shade500,
+        //           offset: Offset(4.0, 4.0),
+        //           blurRadius: 15.0,
+        //           spreadRadius: 1.0),
+        //       BoxShadow(
+        //           color: Colors.white,
+        //           offset: Offset(-4.0, -4.0),
+        //           blurRadius: 15.0,
+        //           spreadRadius: 1.0),
+        //     ]),
       ),
     );
   }

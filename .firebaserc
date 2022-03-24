@@ -1,5 +1,7 @@
 {
   "projects": {
-    "default": "expensetracker-b8b58"
-  }
+    "default": "expensetracker-b8b58",
+    "development": "np-beauty-income"
+  },
+  "targets": {}
 }

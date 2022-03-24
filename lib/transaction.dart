@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class MyTransaction extends StatelessWidget {
   final String transactionName;
   final String money;
-  final String expenseOrIncome;
+  final String date;
 
   MyTransaction({
     required this.transactionName,
     required this.money,
-    required this.expenseOrIncome,
+    required this.date,
   });
 
   @override
@@ -20,40 +20,47 @@ class MyTransaction extends StatelessWidget {
         child: Container(
           padding: EdgeInsets.all(15),
           color: Colors.grey[100],
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          child: Column(
             children: [
+             // Text(DateTime.now().toString().substring(0,10)),
+              
+              Text(date),
               Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Container(
-                    padding: EdgeInsets.all(5),
-                    decoration: BoxDecoration(
-                        shape: BoxShape.circle, color: Colors.grey[500]),
-                    child: Center(
-                      child: Icon(
-                        Icons.attach_money_outlined,
-                        color: Colors.white,
+                  Row(
+                    children: [
+                      Container(
+                        padding: EdgeInsets.all(5),
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle, color: Colors.grey[500]),
+                        child: Center(
+                          child: Icon(
+                            Icons.attach_money_outlined,
+                            color: Colors.white,
+                          ),
+                        ),
                       ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(transactionName,
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.grey[700],
+                          )),
+                    ],
+                  ),
+                  Text(
+                    '\$' + money,
+                    style: TextStyle(
+                      //fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                      color: 
+                          Colors.green,
                     ),
                   ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  Text(transactionName,
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.grey[700],
-                      )),
                 ],
-              ),
-              Text(
-                (expenseOrIncome == 'expense' ? '-' : '+') + '\$' + money,
-                style: TextStyle(
-                  //fontWeight: FontWeight.bold,
-                  fontSize: 16,
-                  color:
-                      expenseOrIncome == 'expense' ? Colors.red : Colors.green,
-                ),
               ),
             ],
           ),
